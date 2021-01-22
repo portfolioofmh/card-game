@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Card from './Card'
 
 const numOfCards = 16;
-const numberOfTries = 8;
+const numberOfTries = 6;
 const cardImages = [
     {src: 'burns.png',  name:'Burns'},
     {src: 'human_fly.png',  name:'Human Fly'},
@@ -30,11 +30,7 @@ class Board extends Component {
             gameover:false
         }
 
-        //this.start = this.start.bind(this);
-       //this.cardClick = this.cardClick.bind(this);
-       //this.findMatch = this.findMatch.bind(this);
-       //this.closeCards = this.closeCards.bind(this);
-       //this.restart = this.restart.bind(this);
+
        
     }
 
@@ -50,8 +46,6 @@ class Board extends Component {
             arrayOrder.push(i)
         }
         arrayOrder = arrayOrder.sort(() => Math.random() - 0.5)
-        console.log(arrayOrder );
-        //this.state.order = arrayOrder;
         this.setState({order:arrayOrder});
 
     }
@@ -73,27 +67,22 @@ class Board extends Component {
 
     findMatch = () => {
         if( Math.floor(this.state.order[this.state.firstCard]/2) === Math.floor(this.state.order[this.state.secondCard]/2) ){
-            console.log('match');
             this.setState({
                 firstCard:null,
                 secondCard:null,
                 message: 'match',
                 matches: this.state.matches + 1
             }, () => {
-                console.log(this.state.matches+ ' ' + numOfCards/2)
                 if(this.state.matches === (numOfCards/2)) {
                     this.setState({
                         message: 'YOU WIN!',
                         gameover: true
                     })
-
                 }
-                
-
             } )
         }
         else{
-            console.log('not match');
+
             this.setState({
                 message: 'Not a Match',
                 numberOfTries: this.state.numberOfTries - 1
@@ -134,7 +123,6 @@ class Board extends Component {
     cardClick = (index) => {
 
         if(this.state.numberOfTries > 0 ){
-            console.log(index);
             let updatedArray = [];
             updatedArray = this.state.openedCards;
                updatedArray.push(index)
@@ -144,9 +132,6 @@ class Board extends Component {
     
     
             }else{
-                console.log('second card');
-               //updatedArray = this.state.openedCards;
-               //updatedArray.push(index)
                 this.setState({secondCard: index , openedCards: updatedArray},
                 () => this.findMatch()   
                );
