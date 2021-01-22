@@ -4,14 +4,14 @@ import Card from './Card'
 const numOfCards = 16;
 const numberOfTries = 6;
 const cardImages = [
-    {src: './card-game/images/burns.png',  name:'Burns'},
-    {src: './card-game/images/human_fly.png',  name:'Human Fly'},
-    {src: './card-game/images/laura_powers.png',  name:'Laura Powers'},
-    {src: './card-game/images/lou_eddie.png',  name:'Lou & Eddie'},
-    {src: './card-game/images/ned.png',  name:'Ned Flanders'},
-    {src: './card-game/images/otto.png',  name:'Otto'},
-    {src: './card-game/images/skinner.png',  name:'Skinner'},
-    {src: './card-game/images/smithers.png',  name:'Smithers'}
+    {src: './images/burns.png',  name:'Burns'},
+    {src: './images/human_fly.png',  name:'Human Fly'},
+    {src: './images/laura_powers.png',  name:'Laura Powers'},
+    {src: './images/lou_eddie.png',  name:'Lou & Eddie'},
+    {src: './images/ned.png',  name:'Ned Flanders'},
+    {src: './images/otto.png',  name:'Otto'},
+    {src: './images/skinner.png',  name:'Skinner'},
+    {src: './images/smithers.png',  name:'Smithers'}
 ];
 
 class Board extends Component {
